@@ -1,0 +1,34 @@
+#define _CRT_SECURE_NO_DEPRECATE
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+float x, y;
+char c;
+
+void main()
+{
+	system("chcp 1251");
+	printf("Введите пример в формате x+y, x-y и т.д. (для возведения в степень поставьте знак '^'):\n");
+	scanf("%f%c%f", &x, &c, &y);
+	switch (c)
+	{
+	case '+':
+		printf("=%f", x + y);
+		break;
+	case '-':
+		printf("=%f", x - y);
+		break;
+	case '*':
+		printf("=%f", x * y);
+		break;
+	case '/':
+		printf("=%f", x / y);
+		break;
+	case '^':
+		printf("=%f", powf(x, y));
+		break;
+	default:
+		printf("Введено неверное значение!");
+	}
+}
